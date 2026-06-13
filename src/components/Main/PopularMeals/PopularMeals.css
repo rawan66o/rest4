@@ -1,0 +1,221 @@
+﻿.popular {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-right: 120px;
+  padding-left: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  direction: rtl;
+}
+
+.popular__title {
+  width: 211px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 50px;
+}
+
+.popular__title img {
+  width: 211px;
+  height: 84px;
+  display: block;
+  object-fit: contain;
+}
+
+.popular__grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 386px));
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  gap: 36px;
+  direction: rtl;
+}
+
+.popular__message {
+  margin: -25px 0 25px;
+  color: #6f675f;
+  font-size: 16px;
+  text-align: center;
+}
+
+.popular__message--error {
+  color: #c2410c;
+}
+
+/* PopularMeals component classes */
+.popular-meals {
+  width: 100%;
+  padding: 25px 0 35px;
+  background: #f9fafb;
+  direction: rtl;
+  overflow: hidden;
+}
+
+.popular-meals__container {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.popular-meals__title {
+  width: 100%;
+  margin: 0 auto 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.popular-meals__title img {
+  width: 211px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.popular-meals__grid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 386px));
+  gap: 36px;
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  direction: rtl;
+}
+
+.popular-meals__message {
+  margin: -25px 0 25px;
+  color: #6f675f;
+  font-size: 16px;
+  text-align: center;
+}
+
+.popular-meals__message--error {
+  color: #c2410c;
+}
+
+@media (max-width: 1200px) {
+  .popular {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, minmax(260px, 386px));
+    gap: 32px;
+  }
+
+  .popular-meals__container {
+    width: min(100% - 48px, 900px);
+  }
+
+  .popular-meals__grid {
+    grid-template-columns: repeat(2, minmax(260px, 386px));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .popular {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .popular__grid {
+    grid-template-columns: minmax(260px, 386px);
+    gap: 36px;
+  }
+
+  .popular-meals {
+    padding: 0 0 100px;
+  }
+
+  .popular-meals__container {
+    width: min(100% - 28px, 520px);
+  }
+
+  .popular-meals__title {
+    margin-bottom: 48px;
+  }
+
+  .popular-meals__grid {
+    grid-template-columns: minmax(260px, 386px);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .popular {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 14px;
+    padding-left: 14px;
+    margin: 0 auto;
+  }
+
+  .popular__title {
+    width: 144px;
+    height: auto;
+    margin: 0 auto 28px;
+  }
+
+  .popular__title img {
+    width: 144px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .popular__grid {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+    gap: 12px 20px;
+  }
+
+  .popular__grid .meal-card {
+    width: 100%;
+  }
+
+  .popular-meals__title img {
+    width: 144px;
+  }
+
+  .popular-meals__grid {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: 12px 20px;
+  }
+
+  .popular-meals__grid .meal-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .popular__grid,
+  .popular-meals__grid {
+    max-width: 100%;
+    gap: 10px;
+  }
+}
