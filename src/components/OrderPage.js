@@ -1,6 +1,6 @@
 import React from "react";
-import OrderTable from "./OrderTable";
-import OrderHeader from "./OrdersHeader";
+import OrderTable from "../../OrderTable";
+import OrderHeader from "../../OrdersHeader";
 const OrdersPage = () => {
   return (
     <div
