@@ -3,9 +3,9 @@
 
 import React from 'react';
 import OrderRow from './OrderRow';
-import Icon from '../Icon';
+import Icon from './Icon';
 
-const OrdersSection = ({ orders, onDownloadInvoice }) => {
+function OrdersSection({ orders, onDownloadInvoice }) {
   return (
     <section className="dashboard-orders">
       <div className="dashboard-orders__header">
@@ -27,6 +27,6 @@ const OrdersSection = ({ orders, onDownloadInvoice }) => {
       </div>
     </section>
   );
-};
+}
 
 export default OrdersSection;
