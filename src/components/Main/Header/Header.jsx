@@ -1,5 +1,5 @@
 import "./Header.css";
-
+import { NavLink } from "react-router-dom";
 const logo = `${process.env.PUBLIC_URL || ""}/images/logo.png`;
 const cartIcon = `${process.env.PUBLIC_URL || ""}/images/cart.png`;
 
@@ -41,10 +41,10 @@ function Header() {
             تسجيل الدخول
           </button>
 
-          <button type="button" className="header__cart">
+        <NavLink to={"/cart"}  className="header__cart">
             <span>سلة الطلب</span>
             <img src={cartIcon} alt="" aria-hidden="true" />
-          </button>
+          </NavLink>
         </div>
       </div>
     </header>

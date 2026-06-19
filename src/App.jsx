@@ -1,4 +1,5 @@
 import "./App.css";
+// import "./index.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 
@@ -8,7 +9,8 @@ import Categories from "./components/Main/Categories/Categories";
 import PopularMeals from "./components/Main/PopularMeals/PopularMeals";
 import Footer from "./components/Main/Footer/Footer";
 import Dashboard from "./pages/Dashboard";
-
+import IndexBill from "./components/Main/bill/IndexBill";
+import Details from "./components/Main/details/indexDetails"
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -104,7 +106,7 @@ function HomePage() {
         <PopularMeals />
         <Categories />
       </main>
-
+      
       <Footer />
     </div>
   );
@@ -114,6 +116,9 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/cart" element={<IndexBill />} />
+      <Route path="/details" element={<Details />} />
+
       
       <Route 
         path="/dashboard/*" 
@@ -123,6 +128,7 @@ function AppRoutes() {
           </ProtectedRoute>
         } 
       />
+     
       
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
