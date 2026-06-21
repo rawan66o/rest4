@@ -7,8 +7,8 @@ const OrderTable = () => {
   // =========================
   // TOKEN
   // =========================
-   const token =  "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTliOTQxMi1iYmEwLTcxOWYtOWYxZC05MmE2MjdiOGQ2NDUiLCJqdGkiOiJmNjdjOWIxYjEwZTIzMzM0ZDJiZjk0NWJlMTc4Mzk0YWM4NTkyM2I4YTIxNTZlOTY2MTM1YTY2YzE5NTM1MGRhNGZiYWExOGRkNjk0ZjAzNiIsImlhdCI6MTc4MTcwODk2NS44MDc1NjMsIm5iZiI6MTc4MTcwODk2NS44MDc1NjUsImV4cCI6MTc4MTc5NTM2NS43OTYyNTMsInN1YiI6IjAxOWRmMzhmLWUzYWMtNzFmNS04MWI3LWYwN2VjYmRlNTQ5OCIsInNjb3BlcyI6W119.ZczWo4rHL-PxWx8TVvnLVk_pXRUU6ICvDcY84FVkMBSxZrnsy06wGS_iKcLTCLfvuJbWAcF3fEZoki469cBU2vzFnRtAR3x7sSq4EIRplwZdHvcXxskUWVKw30yTCHPJ0vaEUsHy4r3ZvJ07l6YB2vfNKebsRKBNDaLZTOiCZ1MLO0_R5pSsoZJAzhYRFrmeG7xFjT0Xs3QnjasBB12tj2TzbdMJo5-0suOw0xSN7vv_AARnrekMKmT_T1mR64MDhKTYNuDgAgIQmL8ecGKTW3obYv7Jv4UnlXcVaCYKio1UzQ2gxWcuw4F5RMsh91Y6u3uTADMPLdLUYDaxq6PnPYWvHKEyGbn5mcaxXozf0xfYlJeLub0VsBh0X6rmUGj95KoPTTJGn7nBTdGCNQmuyOeGTWuS2fKaBRvce2Xs6gwyr8b_4jV33Lqk2pr77_SASEfX0lIj5OJLDoLfg2i9-J3DgQla7hg5Y8GSh5FSJQpn6C3EYGkS1ov4oiVdxFqkO-m8psLyIjFfzSaaeg1pBxGchJeiO5JaA5xeQvDWdarxGZaJ4hn-n6S5vvTSmrAkqWOE_H-Zf66kIXPb2_eilGP3Twpq1zp00wmGmFXkyFwtmTwT62rUb7YzD_KpBBKKlFC77KD6-OvEhtnsFDBChAbNBtJNjSO7KBEwej_v9ZA";
-  // =========================
+  const token =
+    localStorage.getItem("authToken") || sessionStorage.getItem("authToken"); // =========================
   // FETCH ORDERS
   // =========================
   useEffect(() => {
@@ -16,7 +16,7 @@ const OrderTable = () => {
       method: "GET",
       headers: {
         Accept: "application/json",
-        Authorization:` Bearer ${token}`,
+        Authorization: ` Bearer ${token}`,
       },
     })
       .then((res) => res.json())
@@ -26,7 +26,7 @@ const OrderTable = () => {
         setOrders(data.data || []);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [token]);
 
   return (
     <div
@@ -73,14 +73,12 @@ const OrderTable = () => {
 
               time: order.created_at,
 
-              customer:
-                order.customer_name || "اسم غير موجود",
+              customer: order.customer_name || "اسم غير موجود",
 
               customerImage:
                 "https://cdn-icons-png.flaticon.com/512/149/149071.png",
 
-              type:
-                order.customer_address || "زبون",
+              type: order.customer_address || "زبون",
 
               price: `${order.total_amount} $`,
 
@@ -95,15 +93,10 @@ const OrderTable = () => {
 
               details:
                 order.items
-                  ?.map(
-                    (item) =>
-                      `${item.product.name} × ${item.quantity}`
-                  )
+                  ?.map((item) => `${item.product.name} × ${item.quantity}`)
                   .join(" , ") || "لا يوجد تفاصيل",
 
-              category:
-                order.items?.[0]?.product?.category_id ||
-                "بدون صنف",
+              category: order.items?.[0]?.product?.category_id || "بدون صنف",
             }}
           />
         ))}
