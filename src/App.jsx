@@ -136,10 +136,11 @@ function AppRoutes() {
       />
 
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path="/orders" element={<OrderPage />} />
+     <Route path="/orders" element={<OrderPage />} />
       <Route path="/orders/:id" element={<OrderRow />} />
       <Route path="/orders/table" element={<OrderTable />} />
       <Route path="/orders/header" element={<OrdersHeader />} />
+      <Route path="/test" element={<div>Test Page</div>} />
     </Routes>
   );
 }
