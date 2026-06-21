@@ -15,11 +15,11 @@ import Categories from "./components/Main/Categories/Categories";
 import PopularMeals from "./components/Main/PopularMeals/PopularMeals";
 import Footer from "./components/Main/Footer/Footer";
 import Dashboard from "./pages/Dashboard";
+// تم التعديل بتاريخ 21-6-2026
 import OrderPage from "./components/OrderPage";
 import OrderRow from "./components/OrderRow";
 import OrderTable from "./components/OrderTable";
 import OrdersHeader from "./components/OrdersHeader";
-
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
