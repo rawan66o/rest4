@@ -1,6 +1,13 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import Header from "./components/Main/Header/Header";
 import Hero from "./components/Main/Hero/Hero";
@@ -8,10 +15,10 @@ import Categories from "./components/Main/Categories/Categories";
 import PopularMeals from "./components/Main/PopularMeals/PopularMeals";
 import Footer from "./components/Main/Footer/Footer";
 import Dashboard from "./pages/Dashboard";
-import OrderPage from './components/OrderPage';
-import OrderRow from './components/OrderRow';
-import OrderTable from './components/OrderTable';
-import OrdersHeader from './components/OrdersHeader';
+import OrderPage from "./components/OrderPage";
+import OrderRow from "./components/OrderRow";
+import OrderTable from "./components/OrderTable";
+import OrdersHeader from "./components/OrdersHeader";
 
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -20,9 +27,9 @@ function ProtectedRoute({ children }) {
   const location = useLocation();
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken") || 
-                  sessionStorage.getItem("authToken");
-    
+    const token =
+      localStorage.getItem("authToken") || sessionStorage.getItem("authToken");
+
     if (token) {
       setIsAuthenticated(true);
       console.log(" تم التحقق من الهوية بنجاح");
@@ -30,7 +37,7 @@ function ProtectedRoute({ children }) {
       console.log(" لا يوجد توكن - جاري التوجيه لتسجيل الدخول");
       navigate("/login", { state: { from: location.pathname } });
     }
-    
+
     setIsLoading(false);
   }, [navigate, location]);
 
@@ -85,7 +92,7 @@ function ProtectedRoute({ children }) {
             margin-top: 8px;
           }
         `}</style>
-        
+
         <div className="auth-loader-container">
           <div className="auth-spinner"></div>
           <p className="auth-loading-text">جاري التحقق من الهوية...</p>
@@ -118,21 +125,21 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      
-      <Route 
-        path="/dashboard/*" 
+
+      <Route
+        path="/dashboard/*"
         element={
           <ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>
-        } 
+        }
       />
-      
+
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path="/orders" element={<OrderPage />} />
-          <Route path="/orders/:id" element={<OrderRow />} />
-          <Route path="/orders/table" element={<OrderTable />} />
-          <Route path="/orders/header" element={<OrdersHeader />} />
+      <Route path="/orders/:id" element={<OrderRow />} />
+      <Route path="/orders/table" element={<OrderTable />} />
+      <Route path="/orders/header" element={<OrdersHeader />} />
     </Routes>
   );
 }
