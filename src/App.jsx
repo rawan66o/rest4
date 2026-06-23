@@ -15,11 +15,7 @@ import Categories from "./components/Main/Categories/Categories";
 import PopularMeals from "./components/Main/PopularMeals/PopularMeals";
 import Footer from "./components/Main/Footer/Footer";
 import Dashboard from "./pages/Dashboard";
-// تم التعديل بتاريخ 21-6-2026
-import OrderPage from "./components/OrderPage";
-import OrderRow from "./components/OrderRow";
-import OrderTable from "./components/OrderTable";
-import OrdersHeader from "./components/OrdersHeader";
+
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -136,10 +132,7 @@ function AppRoutes() {
       />
 
       <Route path="*" element={<Navigate to="/" replace />} />
-     <Route path="/orders" element={<OrderPage />} />
-      <Route path="/orders/:id" element={<OrderRow />} />
-      <Route path="/orders/table" element={<OrderTable />} />
-      <Route path="/orders/header" element={<OrdersHeader />} />
+    
       <Route path="/test" element={<div>Test Page</div>} />
     </Routes>
   );
