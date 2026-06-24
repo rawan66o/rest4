@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // <-- إضافة
 import "./Categories.css";
 
 import CategoryCard from "../CategoryCard/CategoryCard";
@@ -20,6 +21,7 @@ function Categories() {
   const [categoryList, setCategoryList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // <-- إضافة
 
   useEffect(() => {
     async function loadCategories() {
@@ -58,7 +60,7 @@ function Categories() {
       )}
 
       {!loading && !error && categoryList.length === 0 && (
-         <p className="categories__message">لا توجد أصناف متاحة حالياً.</p>
+        <p className="categories__message">لا توجد أصناف متاحة حالياً.</p>
       )}
 
       <div className="categories__grid">
@@ -67,7 +69,11 @@ function Categories() {
         ))}
       </div>
 
-      <button type="button" className="categories__button">
+      <button
+        type="button"
+        className="categories__button"
+        onClick={() => navigate("/products")}
+      >
         عرض الأصناف
       </button>
     </section>
