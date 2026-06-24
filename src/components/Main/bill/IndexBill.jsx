@@ -14,7 +14,7 @@ const BillIndex = () => {
   return (
     <div className='bg-bodyColor ' dir="rtl">
     <Header />
-    <div className="xl:px-16 lg:px-16 md:px-5 xs:px-10  pt-28   pb-0">
+    <div className=" xl:px-16 lg:px-16 md:px-5 xs:px-10  pt-28   pb-0">
     <div className='w-full min-h-screen lg:gap-10   '>
     
         <div >

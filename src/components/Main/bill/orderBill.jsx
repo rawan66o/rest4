@@ -162,7 +162,7 @@ const decreaseQuantity = (index) => {
 
   return (
   <div className="flex justify-center md:flex-row flex-col items-center">
-    <div className="md:absolute md:top-[135px] md:left-[50%] lg:left-[600px] xl:left-[590px]">
+    <div className="md:absolute md:top-[135px] md:left-[50%] lg:left-[600px] xl:left-[590px] 2xl:right-[300px]">
        {items.map((item , index) => (
             <div
               key={item.id}
