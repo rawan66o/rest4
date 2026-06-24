@@ -1,0 +1,40 @@
+.account {
+    text-align: right;
+    font-family: "Tajawal", sans-serif;
+}
+
+.personal-pic {
+    border-radius: 50%;
+}
+
+.personal-btn {
+    margin: 30px;
+    padding: 10px 20px !important;
+    box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.113);
+    border-radius: 30px !important;
+}
+
+.re-password {
+    padding: 10px 20px !important;
+    box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.113);
+    border-radius: 30px !important;
+}
+
+.account-item h4{
+    color: rgb(92, 92, 92);
+}
+
+.account-item input,.address-input {
+    text-align: right;
+    margin-top: 13px;
+    padding: 11px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid gray;
+    background-color: #faf9fB;
+}
+
+.address-input {
+    height: 111px;
+}

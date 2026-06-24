@@ -1,0 +1,77 @@
+.elem .btn {
+    padding: 10px 20px !important;
+    box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.113);
+    border-radius: 30px !important;
+}
+
+.nav-tabs .nav-link {
+    color: #000;
+}
+
+.nav-tabs .nav-link:hover {
+    color: orangered;
+}
+
+.nav-tabs .nav-link.active {
+    border: 1px solid rgb(194, 186, 186) !important;
+    color: orangered !important;
+    border-bottom-width: 0 !important;
+}
+
+.basket-icon {
+    /* margin: 30px; */
+    padding: 6px;
+    text-align: right;
+    color: brown;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+div .basket-icon {
+    height: 40px;
+    width: 40px;
+    font-size: 35px;
+}
+
+.order-card {
+    margin: 25px;
+    padding: 65px;
+    border: 1px solid rgb(194, 186, 186);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.order-icon {
+    padding: -30px;
+    margin-right: 22px;
+    font-size: 30px;
+}
+
+.order-icon:hover {
+    color: brown;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.order-date,
+.order-id {
+    width: 180px;
+    margin-left: 40px;
+}
+
+.order-message {
+    flex: 1;
+    text-align: end;
+    margin-right: 100px;
+}
+
+.order-date {
+    font-size: 18px;
+}
+
+.order-message {
+    font-size: 20px;
+}
