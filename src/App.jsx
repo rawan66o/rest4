@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import { useEffect, useState } from "react";
 import {
   BrowserRouter,
@@ -25,6 +25,8 @@ import OrderPage from "./components/OrderPage";
 import OrderRow from "./components/OrderRow";
 import OrderTable from "./components/OrderTable";
 import OrdersHeader from "./components/OrdersHeader";
+import ProductCard from "./components/ProductCard";
+import ProductsSection from "./components/ProductsSection";
 
 /* ===================== Protected Route ===================== */
 function ProtectedRoute({ children }) {
@@ -104,6 +106,7 @@ function AppRoutes() {
         }
       />
 
+
       {/* LOGIN */}
       <Route path="/login" element={<div>Login Page</div>} />
 
@@ -111,6 +114,15 @@ function AppRoutes() {
       <Route path="/test" element={<div>Test Page</div>} />
 
       {/* FALLBACK */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+
+
+      <Route path="/orders" element={<OrderPage/>} />
+      <Route path="/orders/:id" element={<OrderRow />} />
+      <Route path="/orders/table" element={<OrderTable />} />
+      <Route path="/orders/header" element={<OrdersHeader />} />
+      <Route path="/products" element={<ProductsSection/>} />
+      <Route path="/product/:id" element={<ProductCard/>} />
       <Route path="*" element={<Navigate to="/" replace />} />
 
     </Routes>
