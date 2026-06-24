@@ -170,7 +170,7 @@ const ProductsSection = () => {
                     src={
                       cat.image_url?.startsWith("http")
                         ? cat.image_url
-                        : "https://menu.teknova-sy.com/${cat.image_url}"
+                        : `https://menu.teknova-sy.com/${cat.image_url}`
                     }
                     alt={cat.name}
                     style={{
@@ -215,7 +215,7 @@ const ProductsSection = () => {
                     src={
                       cat.image_url?.startsWith("http")
                         ? cat.image_url
-                        : "https://menu.teknova-sy.com/${cat.image_url}"
+                        : `https://menu.teknova-sy.com/${cat.image_url}`
                     }
                     alt={cat.name}
                     style={{
