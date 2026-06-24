@@ -20,6 +20,8 @@ import OrdersPage from "./components/OrderPage";
 import OrderRow from "./components/OrderRow";
 import OrderTable from "./components/OrderTable";
 import OrdersHeader from "./components/OrdersHeader";
+import ProductCard from "./components/ProductCard";
+import ProductsSection from "./components/ProductsSection";
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -139,6 +141,8 @@ function AppRoutes() {
       <Route path="/orders/:id" element={<OrderRow />} />
       <Route path="/orders/table" element={<OrderTable />} />
       <Route path="/orders/header" element={<OrdersHeader />} />
+      <Route path="/products" element={<ProductsSection />} />
+      <Route path="/product/:id" element={<ProductCard />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
