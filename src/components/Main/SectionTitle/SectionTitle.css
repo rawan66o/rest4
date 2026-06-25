@@ -1,0 +1,50 @@
+﻿.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title__border {
+  width: 211px;
+  height: 90px;
+  position: relative;
+  background: transparent;
+  direction: rtl;
+  overflow: visible;
+  font-family: "Tajawal", "Cairo", Arial, sans-serif;
+}
+
+/* النص */
+.section-title__border h2 {
+  position: absolute;
+  top: 27px;
+  right: 37px;
+  margin: 0;
+  z-index: 5;
+
+  color: #2f2a25;
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+}
+
+/* الخط البرتقالي الكبير */
+.section-title__border::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 1px;
+  width: 177px;
+  height: 64px;
+
+  border-radius: 100%;
+  border: 5px solid transparent;
+  border-top-color: #fe942a;
+  border-right-color: #fe942a;
+
+  transform: rotate(12deg);
+  z-index: 1;
+}
+
