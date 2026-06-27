@@ -37,6 +37,7 @@ console.log(res.data.data.user.role)
         console.log(localStorage.getItem("adminToken"));
       } else {
         alert("Welcome User");
+         navigate("/")
         localStorage.setItem("token", res.data.data.access_token);
         console.log(localStorage.getItem("token"));
       }
