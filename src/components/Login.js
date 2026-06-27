@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api";
 import cover from "../assets/cover.png";
 import logo from "../assets/logo.png";
@@ -11,7 +12,7 @@ import "./login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate=useNavigate()
   const login = async (e) => {
     e.preventDefault();
     try {
@@ -31,6 +32,7 @@ console.log(res.data.data.user.role)
       ) {
         localStorage.setItem("adminToken", res.data.data.access_token);
         alert("Welcome Admin");
+        navigate("/")
         localStorage.setItem("token", res.data.data.access_token);
         console.log(localStorage.getItem("adminToken"));
       } else {
